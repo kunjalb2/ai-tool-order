@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from config import CORS_ORIGINS
-from routers import chat, events, auth
+from routers import chat, events, auth, mcp
 from database import init_db
 
 # Create FastAPI app
@@ -43,6 +43,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(chat.router)
 app.include_router(events.router)
+app.include_router(mcp.router)
 
 # ============================================================================
 # Main Entry Point

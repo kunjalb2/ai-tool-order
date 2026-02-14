@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 interface ChatHeaderProps {
@@ -45,8 +46,19 @@ export function ChatHeader({ isConnected, sessionId }: ChatHeaderProps) {
           </div>
         </div>
 
-        {/* User + Logout */}
+        {/* MCP Dashboard Link + User + Logout */}
         <div className="flex items-center gap-4">
+          <Link
+            to="/mcp"
+            className="px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+            title="MCP Dashboard"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2v12a2 2 0 012 2h12a2 2 0 012-2V6a2 2 0 01-2-2H6z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2-6h6M6 12v6" />
+            </svg>
+            <span className="hidden sm:inline ml-1">MCP Tools</span>
+          </Link>
           <div className="text-right">
             <p className="text-sm font-medium text-gray-900">{user?.name}</p>
             <p className="text-xs text-gray-500">{user?.email}</p>

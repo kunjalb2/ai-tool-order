@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Message, ApprovalRequest, ChatState } from '../types/chat';
+import { useMCP } from './useMCP';
 
 export function useChat() {
   const [state, setState] = useState<ChatState>({
