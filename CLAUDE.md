@@ -18,6 +18,9 @@ Backend:
 cd server && pip install -r requirements.txt
 cd server && python api.py
 cd server && python seed_db.py    # Seed database with sample data
+cd server && python reset_db.py    # Reset database (drop and recreate all tables)
+cd server && python main.py        # Standalone interactive agent (for testing)
+cd server && python langchain_agent.py  # LangChain version of interactive agent
 ```
 
 Frontend:
